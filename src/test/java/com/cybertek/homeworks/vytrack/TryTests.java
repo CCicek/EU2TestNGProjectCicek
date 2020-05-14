@@ -14,7 +14,7 @@ import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
 public class TryTests {
-    WebDriver driver = Driver.get(ConfigurationReader.get("browser"));
+    WebDriver driver = Driver.get();
    // ToolBox tool = new ToolBox();
     @BeforeMethod
     public void setupMethod() {
@@ -36,7 +36,7 @@ public class TryTests {
     public void test5() throws Exception {
 
 
-                driver= Driver.get(ConfigurationReader.get("browser"));
+                driver= Driver.get();
                 driver.get(ConfigurationReader.get("url"));
 
                 driver.findElement(By.xpath("//input[@id='prependedInput']"))

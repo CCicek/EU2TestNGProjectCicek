@@ -1,7 +1,6 @@
-package com.cybertek.tests.day15_properties_driver_tests;
+package com.cybertek.tests.day14_properties_driver_tests;
 
 import com.cybertek.utilities.ConfigurationReader;
-import com.cybertek.utilities.NextBaseCrm;
 import org.testng.annotations.Test;
 
 public class PropertiesTest {
