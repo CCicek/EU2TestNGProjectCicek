@@ -1,4 +1,4 @@
-package com.cybertek.tests.staletest;
+package com.cybertek.tests.day15_staletest;
 
 import com.cybertek.tests.TestBase;
 import org.openqa.selenium.By;
