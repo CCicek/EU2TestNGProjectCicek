@@ -3,15 +3,24 @@ package com.cybertek.pages;
 import com.cybertek.utilities.ConfigurationReader;
 import com.cybertek.utilities.Driver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindAll;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.FindBys;
 import org.openqa.selenium.support.PageFactory;
+
+import java.util.List;
 
 public class LoginPage {
 
-    public LoginPage() {
+    public LoginPage(){
         PageFactory.initElements(Driver.get(),this);
     }
-    @FindBy(id = "prependedInput")
+
+    //same with driver.findElement(By.id("prependedInput"));
+    @FindAll({
+            @FindBy(id = "prependedInput"),
+            @FindBy(name = "_username"),
+    })
     public WebElement usernameInput;
 
     @FindBy(id = "prependedInput2")
@@ -28,19 +37,15 @@ public class LoginPage {
 
     }
 
-    public void loginDriver(){
-
-        usernameInput.sendKeys(ConfigurationReader.get("driver_username"));
-        passwordInput.sendKeys(ConfigurationReader.get("driver_password"));
+    public void loginAsDriver(){
+        String username = ConfigurationReader.get("driver_username");
+        String password = ConfigurationReader.get("driver_password");
+        usernameInput.sendKeys(username);
+        passwordInput.sendKeys(password);
         loginBtn.click();
 
     }
 
-    public void loginStoreManager(){
 
-        usernameInput.sendKeys(ConfigurationReader.get("storemanager_username"));
-        passwordInput.sendKeys(ConfigurationReader.get("storemanager_password"));
-        loginBtn.click();
 
-    }
 }
