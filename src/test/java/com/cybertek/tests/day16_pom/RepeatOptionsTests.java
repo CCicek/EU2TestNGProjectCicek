@@ -1,10 +1,9 @@
 package com.cybertek.tests.day16_pom;
 
-import com.cybertek.pages.BasePage;
-import com.cybertek.pages.CalendarEventsPage;
-import com.cybertek.pages.DashboardPage;
-import com.cybertek.pages.LoginPage;
+import com.cybertek.pages.*;
 import com.cybertek.tests.TestBase;
+import com.cybertek.utilities.BrowserUtils;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class RepeatOptionsTests extends TestBase {
@@ -19,7 +18,7 @@ public class RepeatOptionsTests extends TestBase {
     verify that repeat weekday is not checked
     * */
     @Test
-    public void test1() {
+    public void test1() throws InterruptedException {
         LoginPage loginPage = new LoginPage();
 
         loginPage.loginAsDriver();
@@ -30,6 +29,16 @@ public class RepeatOptionsTests extends TestBase {
 
         CalendarEventsPage calendarEventsPage = new CalendarEventsPage();
 
+        BrowserUtils.waitFor(5);
         calendarEventsPage.createCalendarEvent.click();
+
+        CreateCalendarEventsPage createCalendarEventsPage = new CreateCalendarEventsPage();
+        BrowserUtils.waitFor(5);
+
+        createCalendarEventsPage.repeat.click();
+
+        Assert.assertTrue(createCalendarEventsPage.days.isSelected(), "Verify days rb is checked");
+
+        Assert.assertFalse(createCalendarEventsPage.weekday.isSelected(),"Verify weekday is NOT checked");
     }
 }
