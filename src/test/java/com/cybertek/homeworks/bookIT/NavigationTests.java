@@ -1,6 +1,5 @@
 package com.cybertek.homeworks.bookIT;
 import com.cybertek.utilities.WebDriverFactory;
-import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 
 public class NavigationTests {

@@ -1,4 +1,5 @@
 package com.cybertek.tests;
+
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
@@ -51,7 +52,6 @@ public class TestBase {
     @BeforeMethod
     @Parameters("env")
     public void setUpMethod(@Optional String env){
-        System.out.println("env = " + env);
 
         //if env variable is null use default url
         if(env==null){

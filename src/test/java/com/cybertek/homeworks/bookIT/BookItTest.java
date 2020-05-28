@@ -1,9 +1,5 @@
 package com.cybertek.homeworks.bookIT;
 
-import com.github.javafaker.Faker;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-
 public class BookItTest {
 
     public static void main(String[] args) throws InterruptedException {
